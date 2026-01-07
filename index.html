@@ -15,6 +15,8 @@
     position: relative;
     overflow: hidden;
   }
+
+
 </style>
 
 
@@ -81,12 +83,19 @@
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="classiccrockery1@gmail.com">classiccrockery1@gmail.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 9835451600 </span></i>
+          <div class="d-flex align-items-center">
+            <i class="bi bi-envelope"></i>
+            <a href="mailto:classiccrockery1@gmail.com">classiccrockery1@gmail.com</a>
+          </div>
+          <div class="d-flex align-items-center ms-4">
+            <i class="bi bi-phone"></i>
+            <span>+91 9835451600</span>
+          </div>
         </div>
-    
+      </div>
+    </div>
 
-    <div class="branding d-flex align-items-cente">
+    <div class="branding d-flex align-items-center">
 
       <div class="container position-relative d-flex align-items-center justify-content-between">
   <a href="index.html" class="logo d-flex align-items-center gap-2">
@@ -94,8 +103,6 @@
   <span class="sitename">Classic Crockery</span>
 </a>
 <nav id="navmenu" class="navmenu">
-  <ul>
- <nav id="navmenu" class="navmenu">
   <ul>
     <li><a href="index.html#hero">Home</a></li>
     <li><a href="index.html#about">About</a></li>
@@ -110,7 +117,6 @@
   <a href="#" onclick="confirmLogout()">Sign Out</a>
 </li>
 </ul>
- </ul>
   <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
  </nav>
  </div>
@@ -444,52 +450,25 @@ At Classic Crockery, every query is handled with care and honesty.</p>
 
     </section><!-- /Services Section -->
 
-<!-- Portfolio Section -->
-<section id="portfolio" class="portfolio section">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section">
 
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Portfolio</h2>
-    <p>
-      Our products are chosen to support daily cooking and dining,
-      offering comfort, convenience, and lasting quality.
-    </p>
-  </div><!-- End Section Title -->
-
- <!-- Portfolio Search (CENTERED BELOW TITLE) -->
-<!-- Portfolio Search (CENTERED BELOW TITLE) -->
-<div class="container mb-4">
-  <div class="row justify-content-center">
-    <div class="col-lg-6 col-md-8">
-      <div class="input-group input-group-lg portfolio-search">
-        <span class="input-group-text bg-white">
-          <i class="bi bi-search"></i>
-        </span>
-        <input
-          type="text"
-          id="portfolioSearch"
-          class="form-control text-center"
-          placeholder="Search products (plates, cooker, geyser...)"
-          onkeyup="filterPortfolio()"
-        >
-      </div>
-    </div>
-  </div>
-</div>
-
-
-  <!-- Portfolio Items START HERE -->
-  <div class="container">
-    <!-- your portfolio grid -->
-  </div>
-
-</section>
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>Explore our wide range of products, from elegant dinnerware to essential home appliances, all designed for quality and everyday use.</p>
+      </div><!-- End Section Title -->
 
       <div class="container">
 
         <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
 
           <ul class="portfolio-filters isotope-filters" data-aos="fade-up" data-aos-delay="100">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-app">App</li>
+            <li data-filter=".filter-product">Product</li>
+            <li data-filter=".filter-branding">Branding</li>
+            <li data-filter=".filter-books">Books</li>
           </ul><!-- End Portfolio Filters -->
 
           <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
@@ -706,7 +685,6 @@ At Classic Crockery, every query is handled with care and honesty.</p>
     <!-- Contact Section -->
     <section id="contact" class="contact section">
 
-      <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
         <p>Get in touch with us for product inquiries, repairs, or support. Your needs matter to us.</p>
@@ -953,11 +931,6 @@ function filterPortfolio() {
   });
 }
 </script>
-
-
-</body>
-
-</body>
 
 
 </body>
