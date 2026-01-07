@@ -4,7 +4,7 @@ This is a simple static website that I built while learning web development.
 The project uses basic HTML, CSS, and JavaScript and is deployed using GitHub Pages.
 
 ## Live Site
-https://satyam-gitdotcom.github.io/my-static-website/
+https://satyam-gitdotcom.github.io/static-website/
 
 ## About the Project
 I created this website to practice building multi-page layouts, working with assets,
