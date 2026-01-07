@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Portfolio Details - Impact Bootstrap Template</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon1.png" rel="icon">
+  <link href="assets/img/apple-touch-icon1.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Impact
+  * Template URL: https://bootstrapmade.com/impact-bootstrap-business-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="portfolio-details-page">
+
+  <canvas id="snow-canvas"></canvas>
+
+
+  <header id="header" class="header fixed-top">
+
+   <div class="topbar d-flex align-items-center">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="classiccrockery1@gmail.com">classiccrockery1@gmail.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 9835451600 </span></i>
+        </div>
+        <!--<div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+
+     <div class="branding d-flex align-items-cente">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+  <a href="index.html" class="logo d-flex align-items-center gap-2">
+  <img src="assets/img/logo.png" alt="Classic Crockery Logo">
+  <span class="sitename">Classic Crockery</span>
+</a>
+       <nav id="navmenu" class="navmenu">
+  <ul>
+    <li><a href="index.html#hero">Home</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="index.html#portfolio">Portfolio</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+    <li id="loginBtn">
+  <a href="login.html" onclick="setRedirect()">Login</a>
+</li>
+
+
+<li id="logoutBtn" style="display:none;">
+  <a href="#" onclick="confirmLogout()">Sign Out</a>
+</li>
+  </ul>
+  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Portfolio Details</h1>
+              <p class="mb-0">Each product in our portfolio is carefully selected to ensure durability, practical design, and everyday reliability. Our collection reflects a balance of quality, functionality, and thoughtful craftsmanship.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Portfolio Details</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+  
+    <!-- Portfolio Search -->
+<!--<section class="section py-3">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <input
+          type="text"
+          id="portfolioSearch"
+          class="form-control form-control-lg"
+          placeholder="Search products (plates, cooker, geyser...)"
+          onkeyup="filterPortfolio()"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up">
+
+        <div class="portfolio-details-slider swiper init-swiper">
+          <script type="application/json" class="swiper-config">
+            {
+              "loop": true,
+              "speed": 600,
+              "autoplay": {
+                "delay": 5000
+              },
+              "slidesPerView": "auto",
+              "navigation": {
+                "nextEl": ".swiper-button-next",
+                "prevEl": ".swiper-button-prev"
+              },
+              "pagination": {
+                "el": ".swiper-pagination",
+                "type": "bullets",
+                "clickable": true
+              }
+            }
+          </script>
+          <div class="swiper-wrapper align-items-center">
+
+            <div class="swiper-slide portfolio-item" data-title="Dinner Plates Set">
+  <img src="assets/img/portfolio/Brainding1.png" alt="">
+</div>
+
+<div class="swiper-slide portfolio-item" data-title="Gas Stove">
+  <img src="assets/img/portfolio/Product7.png" alt="">
+</div>
+
+<div class="swiper-slide portfolio-item" data-title="Mixer Grinder">
+  <img src="assets/img/portfolio/Product5.png" alt="">
+</div>
+
+<div class="swiper-slide portfolio-item" data-title="Cookware Set">
+  <img src="assets/img/portfolio/Brainding5.png" alt="">
+</div>
+
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+        <div class="row justify-content-between gy-4 mt-4">
+
+          <div class="col-lg-8" data-aos="fade-up">
+            <div class="portfolio-description">
+              <h2>Portfolio Details – Classic Crockery</h2>
+              <p>
+                At Classic Crockery, we take pride in offering reliable, high-quality kitchen and home essentials that make everyday living easier and better. This portfolio showcases a selection of our products and services that reflect our commitment to durability, functionality, and customer satisfaction.
+
+From everyday crockery items like plates, bowls, and serving sets to essential home appliances such as cookers, irons, geysers, and hot pots, each product is carefully selected to meet household needs. Our focus is on providing trusted brands and long-lasting solutions at fair prices.
+              </p>
+              <p>
+                In addition to sales, Classic Crockery also provides repair and replacement services for damaged or non-working items. Our experienced staff ensures quick support, honest guidance, and dependable service for our customers.
+
+              <div class="testimonial-item">
+                <p>
+                  <i class="bi bi-quote quote-icon-left"></i>
+                  <span>At Classic Crockery, we focus on delivering dependable products and services that customers can trust. Our collection includes carefully chosen crockery and home appliances designed for everyday use, durability, and comfort. We believe in quality, fair value, and long-term satisfaction, supported by reliable service and customer care.</span>
+                  <i class="bi bi-quote quote-icon-right"></i>
+                </p>
+                <div>
+                 <!--<img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Designer</h4>-->
+                </div>
+              </div>
+
+              <p>
+                At Classic Crockery, we understand the everyday needs of a modern household. Our range of crockery and home appliances is thoughtfully selected to offer comfort, durability, and lasting value. Each product reflects our focus on quality craftsmanship and practical design.
+
+We are committed to providing dependable solutions, whether it’s essential kitchenware or reliable home appliances. Our team ensures careful selection, fair pricing, and attentive customer service, so every purchase feels confident and satisfying.
+              </p>
+
+              <p>
+                Along with quality products, Classic Crockery also offers support through repair and replacement services. This portfolio represents our dedication to trust, consistency, and customer satisfaction—values that define our work and our relationship with every customer.
+              </p>
+
+            </div>
+          </div>
+
+          <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="portfolio-info">
+              <h3>Product information</h3>
+              <ul>
+                <li><strong>Category</strong> Home Appliance – Water Heater (Geyser)</li>
+<li><strong>Store</strong> Classic Crockery</li>
+<li><strong>Project date</strong> Ongoing</li>
+<li><strong>Contact</strong> <a href="tel:9835451600">+91 98354 51600</a></li>
+<li><a href="mailto:classiccrockery1@gmail.com" class="btn-visit align-self-start">Contact Store</a></li>
+
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  <footer id="footer" class="footer accent-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Classic Crockery</span>
+          </a>
+          <p>Classic Crockery offers dependable kitchenware crafted for everyday use. From durable plates to reliable home appliances, our products are chosen to bring comfort, convenience, and long-lasting value to your home.</p>
+           <!--<div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>-->
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#">Reparing</a></li>
+            <li><a href="#">Replacement</a></li>
+            <li><a href="#">Product Management</a></li>
+            <li><a href="#">Customer Support</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Classic Crockery, Ward No - 17, Gudari Bazar</p>
+          <p>Samastipur, Bihar 848101</p>
+          <p>India</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+91 9835451600</span></p>
+          <p><strong>Email:</strong> <span>classiccrockery1@gmail.com</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Classic Crockery</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">Satyam Kumar</a> Distributed by <a href="https://themewagon.com">Sanity Softwares</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script>
+function filterPortfolio() {
+  const input = document.getElementById("portfolioSearch").value.toLowerCase();
+  const items = document.querySelectorAll(".portfolio-item");
+
+  items.forEach(item => {
+    const title = item.getAttribute("data-title").toLowerCase();
+    item.style.display = title.includes(input) ? "" : "none";
+  });
+}
+</script>
+
+</body>
+
+</html>

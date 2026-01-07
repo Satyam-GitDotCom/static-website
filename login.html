@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | Classic Crockery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="d-flex align-items-center justify-content-center"
+      style="min-height:100vh; background:#F7F5F2;">
+
+  <div class="card p-4 shadow" style="max-width:420px; width:100%;">
+    <h3 class="text-center mb-3">Login</h3>
+
+    <form onsubmit="return validateCaptcha()">
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" required>
+      </div>
+
+      <!-- CAPTCHA -->
+      <div class="mb-3">
+        <label class="form-label">
+          What is <strong id="num1"></strong> + <strong id="num2"></strong>?
+        </label>
+        <input type="number" id="captchaInput" class="form-control" required>
+      </div>
+
+      <div id="captchaError" class="text-danger mb-2" style="display:none;">
+        Incorrect CAPTCHA. Try again.
+      </div>
+
+      <button type="submit" class="btn w-100"
+              style="background:#830000; color:#fff;">
+        Login
+      </button>
+    </form>
+  </div>
+
+ <script>
+  // Generate captcha numbers
+  let a = Math.floor(Math.random() * 10) + 1;
+  let b = Math.floor(Math.random() * 10) + 1;
+
+  document.getElementById("num1").innerText = a;
+  document.getElementById("num2").innerText = b;
+
+  function validateCaptcha() {
+    const answer = document.getElementById("captchaInput").value;
+
+    // ❌ Wrong captcha
+    if (parseInt(answer) !== a + b) {
+      document.getElementById("captchaError").style.display = "block";
+
+      // regenerate captcha
+      a = Math.floor(Math.random() * 10) + 1;
+      b = Math.floor(Math.random() * 10) + 1;
+      document.getElementById("num1").innerText = a;
+      document.getElementById("num2").innerText = b;
+
+      return false;
+    }
+
+    // ✅ LOGIN SUCCESS
+    localStorage.setItem("isLoggedIn", "true");
+
+    // 🔁 Redirect to SAME page (reliable)
+    const redirect =
+      localStorage.getItem("redirectAfterLogin") || "index.html";
+
+    localStorage.removeItem("redirectAfterLogin");
+    window.location.href = redirect;
+
+    return false; // prevent form reload
+  }
+</script>
+
+
+
+</body>
+</html>
