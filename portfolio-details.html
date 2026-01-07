@@ -26,8 +26,6 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
-
-
 </head>
 
 <body class="portfolio-details-page">
@@ -35,45 +33,45 @@
   <canvas id="snow-canvas"></canvas>
 
 
-  <header id="header" class="header fixed-top">
-
-   <div class="topbar d-flex align-items-center">
-      <div class="container d-flex justify-content-center justify-content-md-between">
-        <div class="contact-info d-flex align-items-center">
-          <i class="bi bi-envelope d-flex align-items-center"><a href="classiccrockery1@gmail.com">classiccrockery1@gmail.com</a></i>
-          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 9835451600 </span></i>
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between px-4">
+      
+      <div class="contact-info d-flex flex-column align-items-start">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-envelope me-2"></i>
+          <a href="mailto:classiccrockery1@gmail.com">classiccrockery1@gmail.com</a>
         </div>
+        <div class="d-flex align-items-center">
+          <i class="bi bi-phone me-2"></i>
+          <span>+91 9835451600</span>
+        </div>
+      </div>
 
-     <div class="branding d-flex align-items-cente">
-
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-  <a href="index.html" class="logo d-flex align-items-center gap-2">
-  <img src="assets/img/logo.png" alt="Classic Crockery Logo">
-  <span class="sitename">Classic Crockery</span>
-</a>
-       <nav id="navmenu" class="navmenu">
-  <ul>
-    <li><a href="index.html#hero">Home</a></li>
-    <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#services">Services</a></li>
-    <li><a href="index.html#portfolio">Portfolio</a></li>
-    <li><a href="index.html#contact">Contact</a></li>
-    <li id="loginBtn">
-  <a href="login.html" onclick="setRedirect()">Login</a>
-</li>
-
-
-<li id="logoutBtn" style="display:none;">
-  <a href="#" onclick="confirmLogout()">Sign Out</a>
-</li>
-  </ul>
-  <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-</nav>
-
+      <div class="branding d-flex align-items-center gap-4">
+        <a href="index.html" class="logo d-flex align-items-center gap-2">
+          <img src="assets/img/logo.png" alt="Classic Crockery Logo">
+          <span class="sitename">Classic Crockery</span>
+        </a>
+        
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#services">Services</a></li>
+            <li><a href="index.html#portfolio">Portfolio</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+            <li id="loginBtn">
+              <a href="login.html" onclick="setRedirect()">Login</a>
+            </li>
+            <li id="logoutBtn" style="display:none;">
+              <a href="#" onclick="confirmLogout()">Sign Out</a>
+            </li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
       </div>
 
     </div>
-
   </header>
 
   <main class="main">
@@ -100,7 +98,6 @@
       </nav>
     </div><!-- End Page Title -->
   
-
     <!-- Portfolio Details Section -->
     <section id="portfolio-details" class="portfolio-details section">
 
@@ -170,7 +167,10 @@ From everyday crockery items like plates, bowls, and serving sets to essential h
                   <i class="bi bi-quote quote-icon-right"></i>
                 </p>
                 <div>
-
+                 <!--<img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
+                  <h3>Sara Wilsson</h3>
+                  <h4>Designer</h4>-->
+                </div>
               </div>
 
               <p>
@@ -217,8 +217,6 @@ We are committed to providing dependable solutions, whether it’s essential kit
             <span class="sitename">Classic Crockery</span>
           </a>
           <p>Classic Crockery offers dependable kitchenware crafted for everyday use. From durable plates to reliable home appliances, our products are chosen to bring comfort, convenience, and long-lasting value to your home.</p>
-
-          </div>-->
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
@@ -257,7 +255,6 @@ We are committed to providing dependable solutions, whether it’s essential kit
     <div class="container copyright text-center mt-4">
       <p>© <span>Copyright</span> <strong class="px-1 sitename">Classic Crockery</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-
         Designed by <a href="https://bootstrapmade.com/">Satyam Kumar</a> Distributed by <a href="https://themewagon.com">Sanity Softwares</a>
       </div>
     </div>
