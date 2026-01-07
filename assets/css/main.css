@@ -227,63 +227,33 @@ h6 {
 .header {
   --background-color: #830000;
   --heading-color: #ffffff;
-  color: var(--default-color);
+  color: var(--contrast-color);
   transition: all 0.5s;
   z-index: 997;
   background-color: var(--background-color);
+  min-height: 80px;
 }
 
-.header .topbar {
-  background-color: color-mix(in srgb, var(--accent-color) 90%, black 10%);
-  height: 40px;
-  padding: 0;
+.header .contact-info {
   font-size: 14px;
-  transition: all 0.5s;
-}
-
-.header .topbar .contact-info i {
-  font-style: normal;
   color: var(--contrast-color);
 }
 
-.header .topbar .contact-info i a,
-.header .topbar .contact-info i span {
-  padding-left: 5px;
+.header .contact-info a,
+.header .contact-info span {
   color: var(--contrast-color);
+  font-weight: 400;
+  line-height: 1.5;
 }
 
-@media (max-width: 575px) {
-
-  .header .topbar .contact-info i a,
-  .header .topbar .contact-info i span {
-    font-size: 13px;
-  }
-}
-
-.header .topbar .contact-info i a {
-  line-height: 0;
-  transition: 0.3s;
-}
-
-.header .topbar .contact-info i a:hover {
-  color: var(--contrast-color);
-  text-decoration: underline;
-}
-
-.header .topbar .social-links a {
-  color: color-mix(in srgb, var(--contrast-color), transparent 40%);
-  line-height: 0;
-  transition: 0.3s;
-  margin-left: 20px;
-}
-
-.header .topbar .social-links a:hover {
+.header .contact-info i {
+  font-size: 16px;
   color: var(--contrast-color);
 }
 
 .header .branding {
-  min-height: 60px;
-  padding: 10px 0;
+  display: flex;
+  align-items: center;
 }
 
 .header .logo {
@@ -2230,6 +2200,7 @@ section,
   margin: 0 0 15px 0 0 0;
   padding: 0;
 }
+
 }
 
 /*--------------------------------------------------------------
@@ -2927,4 +2898,14 @@ section,
 #portfolioSearch:focus {
   outline: none;
   box-shadow: none;
+}
+
+/* Header adjustments for mobile */
+@media (max-width: 991px) {
+  .header .contact-info {
+    display: none !important;
+  }
+  .header .container-fluid {
+    justify-content: space-between !important;
+  }
 }
