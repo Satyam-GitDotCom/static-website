@@ -9,81 +9,98 @@
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
-<body class="d-flex align-items-center justify-content-center"
-      style="min-height:100vh; background:#F7F5F2;">
+<body class="d-flex align-items-center justify-content-center login-page-bg" style="min-height:100vh;">
+  <main class="card p-4 shadow login-card" style="max-width:420px; width:100%;" aria-labelledby="loginHeading">
+    <h1 id="loginHeading" class="h3 text-center mb-3">Login</h1>
+    <p class="text-muted text-center mb-4">Sign in to continue browsing Classic Crockery.</p>
 
-  <div class="card p-4 shadow" style="max-width:420px; width:100%;">
-    <h3 class="text-center mb-3">Login</h3>
-
-    <form onsubmit="return validateCaptcha()">
+    <form id="loginForm" novalidate>
       <div class="mb-3">
-        <label class="form-label">Email</label>
-        <input type="email" class="form-control" required>
+        <label for="email" class="form-label">Email</label>
+        <input id="email" name="email" type="email" class="form-control" autocomplete="email" required>
       </div>
 
       <div class="mb-3">
-        <label class="form-label">Password</label>
-        <input type="password" class="form-control" required>
+        <label for="password" class="form-label">Password</label>
+        <div class="input-group">
+          <input id="password" name="password" type="password" class="form-control" autocomplete="current-password" required>
+          <button id="togglePassword" class="btn btn-outline-secondary" type="button" aria-label="Show password">Show</button>
+        </div>
       </div>
 
-      <!-- CAPTCHA -->
       <div class="mb-3">
-        <label class="form-label">
-          What is <strong id="num1"></strong> + <strong id="num2"></strong>?
+        <label for="captchaInput" class="form-label d-flex justify-content-between align-items-center">
+          <span>What is <strong id="num1"></strong> + <strong id="num2"></strong>?</span>
+          <button id="refreshCaptcha" type="button" class="btn btn-sm btn-link">Refresh</button>
         </label>
         <input type="number" id="captchaInput" class="form-control" required>
       </div>
 
-      <div id="captchaError" class="text-danger mb-2" style="display:none;">
-        Incorrect CAPTCHA. Try again.
+      <div id="captchaError" class="alert alert-danger py-2 px-3 mb-2 d-none" role="alert">
+        Incorrect CAPTCHA. Please try again.
       </div>
 
-      <button type="submit" class="btn w-100"
-              style="background:#830000; color:#fff;">
-        Login
-      </button>
+      <button type="submit" class="btn w-100" style="background:#830000; color:#fff;">Login</button>
     </form>
-  </div>
+  </main>
 
- <script>
-  // Generate captcha numbers
-  let a = Math.floor(Math.random() * 10) + 1;
-  let b = Math.floor(Math.random() * 10) + 1;
+  <script>
+    let a = 0;
+    let b = 0;
 
-  document.getElementById("num1").innerText = a;
-  document.getElementById("num2").innerText = b;
-
-  function validateCaptcha() {
-    const answer = document.getElementById("captchaInput").value;
-
-    // ❌ Wrong captcha
-    if (parseInt(answer) !== a + b) {
-      document.getElementById("captchaError").style.display = "block";
-
-      // regenerate captcha
+    function generateCaptcha() {
       a = Math.floor(Math.random() * 10) + 1;
       b = Math.floor(Math.random() * 10) + 1;
       document.getElementById("num1").innerText = a;
       document.getElementById("num2").innerText = b;
-
-      return false;
+      document.getElementById("captchaInput").value = "";
     }
 
-    // ✅ LOGIN SUCCESS
-    localStorage.setItem("isLoggedIn", "true");
+    function validateCaptcha(answer) {
+      return Number.parseInt(answer, 10) === a + b;
+    }
 
-    // 🔁 Redirect to SAME page (reliable)
-    const redirect =
-      localStorage.getItem("redirectAfterLogin") || "index.html";
+    document.addEventListener("DOMContentLoaded", function () {
+      const loginForm = document.getElementById("loginForm");
+      const captchaInput = document.getElementById("captchaInput");
+      const captchaError = document.getElementById("captchaError");
+      const togglePasswordBtn = document.getElementById("togglePassword");
+      const passwordInput = document.getElementById("password");
+      const refreshCaptchaBtn = document.getElementById("refreshCaptcha");
 
-    localStorage.removeItem("redirectAfterLogin");
-    window.location.href = redirect;
+      generateCaptcha();
 
-    return false; // prevent form reload
-  }
-</script>
+      refreshCaptchaBtn.addEventListener("click", generateCaptcha);
 
+      togglePasswordBtn.addEventListener("click", function () {
+        const show = passwordInput.type === "password";
+        passwordInput.type = show ? "text" : "password";
+        togglePasswordBtn.innerText = show ? "Hide" : "Show";
+        togglePasswordBtn.setAttribute("aria-label", show ? "Hide password" : "Show password");
+      });
 
+      loginForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
+        if (!loginForm.checkValidity()) {
+          loginForm.reportValidity();
+          return;
+        }
+
+        if (!validateCaptcha(captchaInput.value)) {
+          captchaError.classList.remove("d-none");
+          generateCaptcha();
+          return;
+        }
+
+        captchaError.classList.add("d-none");
+        localStorage.setItem("isLoggedIn", "true");
+
+        const redirect = localStorage.getItem("redirectAfterLogin") || "index.html";
+        localStorage.removeItem("redirectAfterLogin");
+        window.location.href = redirect;
+      });
+    });
+  </script>
 </body>
 </html>

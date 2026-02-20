@@ -110,7 +110,7 @@
     <li><a href="index.html#portfolio">Portfolio</a></li>
     <li><a href="index.html#contact">Contact</a></li>
  <li id="loginBtn">
-  <a href="login.html">Login</a>
+  <a href="login.html" onclick="setRedirect()">Login</a>
 </li>
 
 <li id="logoutBtn" style="display:none;">
@@ -838,9 +838,9 @@ At Classic Crockery, every query is handled with care and honesty.</p>
   <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 
-  <!-- Main JS File -->
+  <!-- Main JS Files -->
   <script src="assets/js/main.js"></script>
-    <script src="assets/js/main.js"></script>
+  <script src="assets/js/auth.js"></script>
 
   <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -887,34 +887,6 @@ At Classic Crockery, every query is handled with care and honesty.</p>
     }
     animate();
   });
-</script>
->
-<script src="assets/js/main.js"></script>
-
-<script>
-  // Show / hide Login & Sign Out
-  document.addEventListener("DOMContentLoaded", function () {
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-
-    const loginBtn = document.getElementById("loginBtn");
-    const logoutBtn = document.getElementById("logoutBtn");
-
-    if (isLoggedIn === "true") {
-      if (loginBtn) loginBtn.style.display = "none";
-      if (logoutBtn) logoutBtn.style.display = "block";
-    } else {
-      if (loginBtn) loginBtn.style.display = "block";
-      if (logoutBtn) logoutBtn.style.display = "none";
-    }
-  });
-
-  // Logout confirmation
-  function confirmLogout() {
-    if (confirm("Are you sure you want to sign out?")) {
-      localStorage.removeItem("isLoggedIn");
-      window.location.href = "index.html";
-    }
-  }
 </script>
 <script>
 function filterPortfolio() {
