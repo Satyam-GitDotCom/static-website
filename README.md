@@ -33,4 +33,4 @@ This is a static website and does not use any backend or database.
 I may continue improving it as I learn more.
 
 ## Author
-Satyam Kumar
+Satyam  Kumar
