@@ -13,7 +13,9 @@ and service and portfolio sections.
 
 ## Technologies Used
 - HTML
+
 - CSS
+
 - JavaScript
 
 ## Folder Structure
