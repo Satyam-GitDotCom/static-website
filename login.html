@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8">   
   <title>Login | Classic Crockery</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -56,7 +56,7 @@
   function validateCaptcha() {
     const answer = document.getElementById("captchaInput").value;
 
-    // ❌ Wrong captcha
+    // ❌ wrong captcha
     if (parseInt(answer) !== a + b) {
       document.getElementById("captchaError").style.display = "block";
 
